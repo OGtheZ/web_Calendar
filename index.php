@@ -39,9 +39,9 @@ if (isset($_POST['submit'])) {
     } elseif ($_POST['to'] === "") {
         echo "'To' time must be set!";
     } elseif (validateDate($_POST['from']) === false) {
-        echo "Invalid from date format! Use YYYY-MM-DD HH:MM or check input date";
+        echo "Invalid 'from' date format or date! Use YYYY-MM-DD HH:MM or check input date";
     } elseif (validateDate($_POST['to']) === false) {
-        echo "Invalid to date format! Use YYYY-MM-DD HH:MM or check input date";
+        echo "Invalid 'to' date format or date! Use YYYY-MM-DD HH:MM or check input date";
     } else {
         $title = $_POST["title"];
         $from = DateTime::createFromFormat('Y-m-d H:i', $_POST["from"]);
