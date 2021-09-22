@@ -42,6 +42,9 @@ if (isset($_POST['submit'])) {
         echo "Invalid 'from' date format or date! Use YYYY-MM-DD HH:MM or check input date";
     } elseif (validateDate($_POST['to']) === false) {
         echo "Invalid 'to' date format or date! Use YYYY-MM-DD HH:MM or check input date";
+    } elseif (!isset($_POST['google']) && !isset($_POST['yahoo']) && !isset($_POST['outlook']) && !isset($_POST['ics']))
+    {
+      echo "You need to choose an event calendar type! " . PHP_EOL;
     } else {
         $title = $_POST["title"];
         $from = DateTime::createFromFormat('Y-m-d H:i', $_POST["from"]);
